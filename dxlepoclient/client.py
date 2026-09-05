@@ -144,9 +144,9 @@ class EpoClient(Client):
                 self._lookup_epo_unique_identifiers(self._dxl_client,
                                                     self._response_timeout)
             epo_ids_len = len(epo_ids)
-            if epo_ids_len is 1:
+            if epo_ids_len == 1:
                 epo_unique_id = next(iter(epo_ids))
-            elif epo_ids_len is 0:
+            elif epo_ids_len == 0:
                 raise Exception(
                     "No ePO DXL services are registered with the DXL fabric")
             else:
